@@ -1,140 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MLPROGSM — Boutique GSM</title>
-<meta name="description" content="MLPROGSM — Boutique GSM : logiciels, licences et outils GSM.">
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#07111d;color:#fff}
-header{background:#0d1b2a;padding:16px 20px;position:sticky;top:0;z-index:10;border-bottom:1px solid #1b3045}
-header .top{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{font-size:22px;font-weight:800;color:#28d7ff}.nav a{color:#fff;text-decoration:none;margin-left:16px}
-main{max-width:1100px;margin:auto;padding:25px 16px}.hero{padding:30px 0}.hero h1{font-size:38px;margin:0 0 10px}.hero p{color:#b7c7d8;max-width:650px}
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.controls input,.controls select,.duration{background:#0d1b2a;color:#fff;border:1px solid #29435c;border-radius:8px;padding:11px}
-.controls input{flex:1;min-width:220px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:#0d1b2a;border:1px solid #1b3045;border-radius:12px;padding:18px}.icon{font-size:35px}.card h3{margin:10px 0}.desc{color:#9eb0c2;font-size:14px;min-height:40px}.duration{width:100%;margin:10px 0}.btn{width:100%;padding:12px;border:0;border-radius:8px;background:#16b7e8;color:#001018;font-weight:bold;cursor:pointer}
-section{margin:35px 0}.box{background:#0d1b2a;border:1px solid #1b3045;border-radius:12px;padding:20px}.pay{display:grid;gap:10px}.pay b{color:#28d7ff}
-.item{padding:12px 0;border-bottom:1px solid #1b3045}.item button{float:right;background:#26384a;color:#fff;border:0;border-radius:5px;padding:6px 9px}
-.total{font-size:21px;font-weight:bold;margin:18px 0}.small{color:#9eb0c2;font-size:13px}footer{text-align:center;color:#8193a5;padding:30px}
-@media(max-width:650px){
-  header{padding:12px 10px}
-  header .top{align-items:flex-start;flex-direction:column;gap:8px}
-  .nav{width:100%;display:flex;flex-wrap:wrap;gap:8px}
-  .nav a{margin-left:0;font-size:13px}
-  .hero{padding:20px 0}
-  .hero h1{font-size:30px;line-height:1.15}
-  .controls{margin:15px 0}
-  .controls input{min-width:100%}
-  .grid{grid-template-columns:1fr}
-  .card{padding:16px}
-}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLPRO-GSM — Services GSM Professionnels</title>
+<meta name="description" content="MLPRO-GSM — Catalogue de services GSM professionnels : Unlock, FRP, Samsung, TSM, Octoplus, Sigma, Xiaomi et location d'outils.">
+<meta name="theme-color" content="#050b14">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header><div class="top"><div class="logo">MLPROGSM</div><div class="nav"><a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#panier">Panier 🛒 <span id="count">0</span></a><a href="#paiement">Paiement</a></div></div></header>
+<header class="header">
+  <div class="container nav">
+    <a href="#accueil" class="logo">MLPRO<span>-GSM</span><small>PROFESSIONAL GSM SERVICES</small></a>
+    <nav class="nav-links">
+      <a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#apropos">À propos</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-wa" href="https://wa.me/237698169728?text=Bonjour%20MLPRO-GSM%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+</header>
 
 <main>
-<section id="accueil" class="hero">
-<h1>⚡ BOUTIQUE GSM PROFESSIONNELLE</h1>
-<p>Logiciels, licences et outils GSM pour techniciens. Choisissez votre outil et la durée souhaitée.</p>
+<section class="hero container" id="accueil">
+  <div class="hero-badge">⚡ SERVICES GSM PROFESSIONNELS</div>
+  <h1>Votre solution <span>GSM</span><br>au même endroit.</h1>
+  <p>MLPRO-GSM vous propose des services professionnels pour les téléphones et outils GSM : Unlock, FRP, Samsung, TSM, Octoplus, Sigma, Xiaomi et bien plus.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#services">🛠️ Voir les services</a>
+    <a class="btn btn-secondary" href="https://wa.me/237698169728?text=Bonjour%20MLPRO-GSM%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">💬 Nous contacter</a>
+  </div>
 </section>
 
-<section id="boutique">
-<h2>Catalogue</h2>
-<div class="controls">
-<input id="search" placeholder="Rechercher un produit…">
-<select id="cat"><option value="all">Toutes les catégories</option><option>Android</option><option>Samsung</option><option>Apple</option><option>Service GSM</option></select>
-</div>
-<div id="products" class="grid"></div>
+<section class="container">
+  <div class="stats-box">
+    <div class="stat"><strong id="totalServices">25</strong><span>Services disponibles</span></div>
+    <div class="stat"><strong>24/7</strong><span>Commande WhatsApp</span></div>
+    <div class="stat"><strong>🇨🇲</strong><span>Prix en FCFA</span></div>
+    <div class="stat"><strong>⚡</strong><span>Service rapide</span></div>
+  </div>
 </section>
 
-<section id="panier">
-<h2>🛒 Votre panier</h2>
-<div class="box">
-<div id="cartList"><p>Votre panier est vide.</p></div>
-<div class="total">Total : <span id="total">0 FCFA</span></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" onclick="clearCart()" style="flex:1;min-width:180px;background:#26384a;color:#fff">Vider le panier</button><a class="btn" href="https://wa.me/237680336455" target="_blank" rel="noopener" style="flex:1;min-width:180px;text-align:center;text-decoration:none">💬 WhatsApp</a></div>
-</div>
+<section class="section container" id="services">
+  <div class="section-title">
+    <div class="label">Catalogue</div>
+    <h2>Nos services GSM</h2>
+    <p>Recherchez votre service, choisissez la durée et commandez directement sur WhatsApp.</p>
+  </div>
+
+  <div class="search-area"><span class="search-icon">🔎</span><input id="search" class="search" type="search" placeholder="Rechercher un service..." autocomplete="off"></div>
+
+  <div class="categories">
+    <button class="cat-btn active" data-category="Tous">Tous</button>
+    <button class="cat-btn" data-category="Android Tools">Android Tools</button>
+    <button class="cat-btn" data-category="Samsung Tools">Samsung Tools</button>
+    <button class="cat-btn" data-category="iPhone / iCloud">iPhone / iCloud</button>
+    <button class="cat-btn" data-category="Xiaomi Tools">Xiaomi Tools</button>
+  </div>
+
+  <div class="catalogue-top"><span><strong id="count">28</strong> services affichés</span><span>🇨🇲 <strong>FCFA</strong></span></div>
+  <div class="grid" id="products"></div>
+  <div class="empty" id="empty"><div>🔍</div><strong>Aucun service trouvé</strong><p>Essayez un autre mot-clé.</p></div>
 </section>
 
-<section id="paiement">
-<h2>💳 Paiement</h2>
-<div class="box">
-<p>Après paiement, envoyez la référence de transaction avec votre commande.</p>
-<div class="pay">
-<div>BINANCE PAY : <b>1203304064</b></div>
-<div>ORANGE MONEY — CAMEROUN : <b>698 169 728</b></div>
-<div>MTN MOBILE MONEY — CAMEROUN : <b>680 336 455</b></div>
-</div>
-<br>
-<form id="orderForm">
-<input id="customer" required placeholder="Nom complet" style="width:100%;padding:12px;margin:5px 0;background:#07111d;color:#fff;border:1px solid #29435c;border-radius:8px">
-<input id="phone" required placeholder="Téléphone / WhatsApp" style="width:100%;padding:12px;margin:5px 0;background:#07111d;color:#fff;border:1px solid #29435c;border-radius:8px">
-<input id="ref" required placeholder="Référence de transaction" style="width:100%;padding:12px;margin:5px 0;background:#07111d;color:#fff;border:1px solid #29435c;border-radius:8px">
-<button class="btn" type="submit">Envoyer la commande</button>
-</form>
-<p class="small">Cette version est une démo côté navigateur. Pour un vrai site, les commandes et paiements doivent être traités par un serveur sécurisé.</p>
-</div>
+<section class="section container">
+  <div class="section-title"><div class="label">Pourquoi nous ?</div><h2>Pourquoi choisir MLPRO-GSM ?</h2></div>
+  <div class="why-grid">
+    <article class="why-card"><div class="why-icon">⚡</div><h3>Service rapide</h3><p>Commandez votre prestation rapidement directement depuis WhatsApp.</p></article>
+    <article class="why-card"><div class="why-icon">🛠️</div><h3>Outils professionnels</h3><p>Accédez à différents outils et services destinés aux professionnels GSM.</p></article>
+    <article class="why-card"><div class="why-icon">🔐</div><h3>Solutions GSM</h3><p>Unlock, FRP, Samsung, Xiaomi, TSM, Octoplus, Sigma et plusieurs autres solutions.</p></article>
+  </div>
+</section>
+
+<section class="section container" id="apropos">
+  <div class="about">
+    <div class="about-box">
+      <div class="label">À PROPOS</div>
+      <h2>Bienvenue chez <span>MLPRO-GSM</span></h2>
+      <p>MLPRO-GSM est spécialisé dans les solutions et services GSM destinés aux techniciens, réparateurs et utilisateurs à la recherche d'outils professionnels.</p>
+      <div class="about-list"><div>✅ Catalogue de services GSM</div><div>✅ Location d'outils</div><div>✅ Commande directe par WhatsApp</div><div>✅ Tarifs affichés en FCFA</div></div>
+    </div>
+    <div class="about-box">
+      <div class="label">SIMPLE & RAPIDE</div>
+      <h2>Comment commander ?</h2>
+      <div class="about-list"><div><strong>01.</strong> Choisissez votre service.</div><div><strong>02.</strong> Choisissez la durée disponible.</div><div><strong>03.</strong> Cliquez sur « COMMANDER ».</div><div><strong>04.</strong> Finalisez votre commande sur WhatsApp.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="contact">
+  <div class="contact-box">
+    <h2>Besoin d'un service GSM ?</h2>
+    <p>Contactez directement MLPRO-GSM sur WhatsApp pour obtenir des informations ou commander un service.</p>
+    <div class="contact-buttons">
+      <a class="btn btn-primary" href="https://wa.me/237698169728?text=Bonjour%20MLPRO-GSM%2C%20je%20souhaite%20commander%20un%20service." target="_blank" rel="noopener">💬 Commander sur WhatsApp</a>
+      <a class="btn btn-secondary" href="tel:+237698169728">📞 Appeler</a>
+    </div>
+  </div>
 </section>
 </main>
-<footer>MLPROGSM — Logiciels & licences GSM — © 2026</footer>
 
-<script>
-const products=[
-{id:1,name:"Unlock Tool",cat:"Android",icon:"🔓",desc:"Outil de service GSM.",durations:[["6 heures",750],["12 heures",1000],["24 heures",1000]]},
-{id:2,name:"TSM Tool",cat:"Android",icon:"🛠️",desc:"Outil de service mobile.",durations:[["3 heures",500],["12 heures",1000]]},
-{id:3,name:"TFM Tool Pro",cat:"Android",icon:"⚡",desc:"Outil professionnel.",durations:[["6 heures",750],["12 heures",1000]]},
-{id:4,name:"AMT Android Multi Tool",cat:"Android",icon:"📱",desc:"Outil de maintenance Android.",durations:[["2 heures",500],["12 heures",1000],["24 heures",1000]]},
-{id:5,name:"SamsungTool.us KG Bypass",cat:"Samsung",icon:"📲",desc:"Service Samsung.",durations:[["12 heures",1000],["48 heures",1500]]},
-{id:6,name:"AnonySHU Tool",cat:"Android",icon:"🔧",desc:"Outil de service mobile.",durations:[["12 heures",1000]]},
-{id:7,name:"DFT Pro Tool",cat:"Android",icon:"⚙️",desc:"Outil professionnel GSM.",durations:[["48 heures",1500]]},
-{id:8,name:"MDM Fix Tool",cat:"Android",icon:"🛠️",desc:"Outil de maintenance.",durations:[["6 heures",750]]},
-{id:9,name:"CF Tools",cat:"Android",icon:"🔧",desc:"Outil de service mobile.",durations:[["6 heures",750]]},
-{id:10,name:"Hydra Tool",cat:"Android",icon:"🐉",desc:"Outil professionnel GSM.",durations:[["12 heures",1000]]},
-{id:11,name:"KG Killer Tool",cat:"Samsung",icon:"⚡",desc:"Outil de service Samsung.",durations:[["4 heures",500]]},
-{id:12,name:"360 Tool",cat:"Android",icon:"🔄",desc:"Outil de service mobile.",durations:[["12 heures",1000]]},
-{id:13,name:"RTC Tool",cat:"Android",icon:"🔧",desc:"Outil de maintenance GSM.",durations:[["6 heures",750]]},
-{id:14,name:"Pandora Tool",cat:"Android",icon:"💻",desc:"Service Pandora.",durations:[["48 heures",1500]]},
-{id:15,name:"Griffin-Unlocker",cat:"Android",icon:"🦁",desc:"Outil professionnel.",durations:[["6 heures",750]]},
-{id:16,name:"CP-Tool CPT Pro",cat:"Android",icon:"⚙️",desc:"Outil de service GSM.",durations:[["12 heures",1000]]}
-];
-let cart=JSON.parse(localStorage.getItem("mlpro_cart")||"[]");
-const money=n=>new Intl.NumberFormat("fr-FR").format(n)+" FCFA";
-function render(){
- const q=(document.getElementById("search").value||"").toLowerCase(),c=document.getElementById("cat").value;
- const list=products.filter(p=>(c==="all"||p.cat===c)&&p.name.toLowerCase().includes(q));
- document.getElementById("products").innerHTML=list.map(p=>`<article class="card"><div class="icon">${p.icon}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><select class="duration" id="d${p.id}">${p.durations.map((d,i)=>`<option value="${i}">${d[0]} — ${money(d[1])}</option>`).join("")}</select><button class="btn" onclick="add(${p.id})">Ajouter au panier</button></article>`).join("");
- drawCart();
-}
-function add(id){
- const p=products.find(x=>x.id===id),i=Number(document.getElementById("d"+id).value),d=p.durations[i];
- cart.push({name:p.name,duration:d[0],price:d[1]});save();location.hash="panier";
-}
-function remove(i){cart.splice(i,1);save()}
-function drawCart(){
- const box=document.getElementById("cartList");
- const total=cart.reduce((s,x)=>s+x.price,0);
- box.innerHTML=cart.length?cart.map((x,i)=>`<div class="item"><b>${x.name}</b><br><span class="small">${x.duration} — ${money(x.price)}</span><button onclick="remove(${i})">Retirer</button></div>`).join(""):"<p>Votre panier est vide.</p>";
- document.getElementById("total").textContent=money(total);document.getElementById("count").textContent=cart.length;
-}
-function save(){
-  localStorage.setItem("mlpro_cart",JSON.stringify(cart));
-  drawCart();
-}
-document.getElementById("search").addEventListener("input",render);
-document.getElementById("cat").addEventListener("change",render);
-document.getElementById("orderForm").addEventListener("submit",e=>{
- e.preventDefault();
- if(!cart.length)return alert("Ajoutez au moins un tool au panier.");
- const name=document.getElementById("customer").value,phone=document.getElementById("phone").value,ref=document.getElementById("ref").value;
- const total=cart.reduce((s,x)=>s+x.price,0);
- const details=cart.map(x=>`${x.name} - ${x.duration} - ${money(x.price)}`).join("\n");
- const msg=`Bonjour MLPROGSM,%0A%0ANom: ${encodeURIComponent(name)}%0AWhatsApp: ${encodeURIComponent(phone)}%0ARéférence: ${encodeURIComponent(ref)}%0A%0A${encodeURIComponent(details)}%0A%0ATotal: ${encodeURIComponent(money(total))}`;
- window.open("https://wa.me/237680336455?text="+msg,"_blank");
-});
-render();
-</script>
+<footer><div class="container"><strong>MLPRO-GSM</strong><br>Votre partenaire pour les services GSM professionnels.<br><a class="footer-wa" href="https://wa.me/237698169728?text=Bonjour%20MLPRO-GSM%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">💬 Contacter MLPRO-GSM sur WhatsApp</a><br><br>© <span id="year"></span> MLPRO-GSM — Tous droits réservés.</div></footer>
+<a class="whatsapp" href="https://wa.me/237698169728?text=Bonjour%20MLPRO-GSM%2C%20je%20souhaite%20commander%20un%20service." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<script src="js/app.js"></script>
 </body>
 </html>
